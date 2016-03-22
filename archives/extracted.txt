@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+ <head>
+  <title>
+   welcome | flask (a python microframework)
+  </title>
+  <meta charset="utf-8"/>
+  <link href="/static/style.css" rel="stylesheet" type="text/css"/>
+  <link href="/static/favicon.ico" rel="shortcut icon"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript">
+  </script>
+  <style type="text/css">
+   h1 { margin: 0 0 30px 0; background: url(/static/logo.png) no-repeat center; height: 165px; }
+    h1 span, p.tagline { display: none; }
+  </style>
+  <script type="text/javascript">
+   $(function() {
+      $('h1').bind('mousedown contextmenu', function(event) {
+        if (event.button != 2)
+          return;
+        var box = $('div.logohint');
+        if (!box.is(':visible'))
+          box.animate({'height': 'show', 'opacity': 'show'}, 100);
+        event.preventdefault();
+        event.returnvalue = false;
+        return false;
+      });
+    });
+  </script>
+ </head>
+ <body>
+  <div class="box">
+   <h1>
+    <span>
+     welcome
+    </span>
+   </h1>
+   <p class="tagline">
+    because sometimes a pocket knife is not enough
+   </p>
+   <div class="logohint" style="display: none">
+    <p>
+     are you interested in the logo?  we have it available in large versions so
+      please if you use it head over to the
+     <a href="/community/logos/">
+      logo
+      page
+     </a>
+     for the logo and the usage guidelines.
+    </p>
+    <p>
+     quicklinks:
+     <a href="/static/logo/flask.png">
+      png
+     </a>
+     and
+     <a href="/static/logo/flask.eps">
+      eps
+     </a>
+    </p>
+   </div>
+   <p class="nav">
+    <a href="/">
+     overview
+    </a>
+    //
+    <a href="/docs/">
+     docs
+    </a>
+    //
+    <a href="/community/">
+     community
+    </a>
+    //
+    <a href="/snippets/">
+     snippets
+    </a>
+    //
+    <a href="/extensions/">
+     extensions
+    </a>
+    //
+    <a href="/search/">
+     search
+    </a>
+   </p>
+   <blockquote>
+    flask is a microframework for python based on werkzeug, jinja 2 and good intentions.
+    and before you ask: it's
+    <a href="/docs/license/">
+     bsd licensed
+    </a>
+    !
+   </blockquote>
+   <p class="latestver">
+    <strong>
+     latest version:
+    </strong>
+    <a href="http://pypi.python.org/packages/source/f/flask/flask-0.10.1.tar.gz" title="download tarball">
+     0.10.1
+    </a>
+   </p>
+   <h2>
+    flask is fun
+   </h2>
+   <pre><span class="ig">from flask import flask
+app = flask(__name__)</span>
+
+@app.route("/")
+def hello():
+    return "hello world!"
+
+<span class="ig">if __name__ == "__main__":
+    app.run()</span></pre>
+   <h2>
+    and easy to setup
+   </h2>
+   <pre><span class="ig">$ </span>pip install flask
+<span class="ig">$ </span>python hello.py
+<span class="ig"> * running on http://localhost:5000/</span></pre>
+   <iframe height="35" src="http://ghbtns.com/github-btn.html?user=mitsuhiko&amp;repo=flask&amp;type=watch&amp;count=true&amp;size=large" style="float: right;border: none" width="190">
+   </iframe>
+   <h2>
+    interested?
+   </h2>
+   <ul>
+    <li>
+     <a href="http://pypi.python.org/packages/source/f/flask/flask-0.10.1.tar.gz">
+      download latest release
+     </a>
+     (0.10.1)
+    </li>
+    <li>
+     <a href="/docs/">
+      read the documentation
+     </a>
+     or download as
+     <a href="/docs/0.10/.latex/flask.pdf">
+      pdf
+     </a>
+    </li>
+    <li>
+     <a href="/mailinglist/">
+      join the mailinglist
+     </a>
+    </li>
+    <li>
+     <a href="http://github.com/mitsuhiko/flask">
+      fork it on github
+     </a>
+    </li>
+    <li>
+     <a href="http://github.com/mitsuhiko/flask/issues">
+      add issues and feature requests
+     </a>
+    </li>
+   </ul>
+   <h2>
+    what’s in the box?
+   </h2>
+   <ul>
+    <li>
+     built-in development server and
+     <a href="/docs/quickstart/#debug-mode">
+      debugger
+     </a>
+    </li>
+    <li>
+     integrated
+     <a href="/docs/testing/">
+      unit testing support
+     </a>
+    </li>
+    <li>
+     restful
+     <a href="/docs/quickstart/#routing">
+      request dispatching
+     </a>
+    </li>
+    <li>
+     uses
+     <a href="http://jinja.pocoo.org/docs/">
+      jinja2 templating
+     </a>
+    </li>
+    <li>
+     support for
+     <a href="/docs/quickstart/#sessions">
+      secure cookies
+     </a>
+     (client side sessions)
+    </li>
+    <li>
+     100%
+     <a href="http://www.python.org/dev/peps/pep-0333/">
+      wsgi 1.0
+     </a>
+     compliant
+    </li>
+    <li>
+     unicode based
+    </li>
+    <li>
+     extensively
+     <a href="/docs/">
+      documented
+     </a>
+    </li>
+   </ul>
+   <h2>
+    what do flask apps look like?
+   </h2>
+   <p>
+    if you are looking for some example code of applications written with flask,
+    have a look at the sources of the examples on github:
+   </p>
+   <ul>
+    <li>
+     <a href="http://github.com/mitsuhiko/flask/tree/master/examples/flaskr/">
+      flaskr
+     </a>
+     — a microblog
+    </li>
+    <li>
+     <a href="http://github.com/mitsuhiko/flask/tree/master/examples/minitwit/">
+      minitwit
+     </a>
+     — a twitter clone
+    </li>
+    <li>
+     <a href="http://github.com/mitsuhiko/flask-website">
+      this website
+     </a>
+     — static pages + mailinglist archives
+    </li>
+   </ul>
+   <h2>
+    contribute
+   </h2>
+   <p>
+    found a bug? have a good idea for improving flask? head over to
+    <a href="http://github.com/mitsuhiko/flask">
+     flask's github
+    </a>
+    page and
+    create a new ticket or fork.  if you just want to chat with fellow
+    developers, visit
+    <a href="/community/irc/">
+     the irc
+    channel
+    </a>
+    or join
+    <a href="/mailinglist/">
+     the mailinglist
+    </a>
+    .  you can also directly add issues and feature
+    requests to the
+    <a href="http://github.com/mitsuhiko/flask/issues">
+     issue tracker
+    </a>
+    .
+    <a href="http://github.com/mitsuhiko/flask">
+     <img alt="fork me on github" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" style="position: fixed; top: 0; right: 0; border: 0;"/>
+    </a>
+   </p>
+   <p class="footer">
+    © copyright 2010 - 2016 by
+    <a href="http://lucumr.pocoo.org/">
+     armin ronacher
+    </a>
+   </p>
+  </div>
+ </body>
+</html>
